@@ -62,11 +62,29 @@ function main(){
 
 const removeDuplicates = (string) =>{
     let  nonDuplicateString = ''
-    for(let i=0; i<string.length; i++){
-        if (!nonDuplicateString.includes(string[i])){
-            nonDuplicateString += string[i]
+    for(let char of string){
+        if (!nonDuplicateString.includes(char)){
+            nonDuplicateString += char
         }
     }
     return nonDuplicateString;
 }
 console.log(removeDuplicates('google'))
+
+const groupAnagrams = (arr) =>{
+
+    let result = {};
+    for(let word of arr){
+        let cleansed = word.split('').sort().join('');
+        if(result[cleansed]){
+            result[cleansed].push(word);
+        }
+        else{
+            result[cleansed] = [word];
+        }
+    }
+    return Object.values(result);
+
+}
+
+console.log(groupAnagrams(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']))
