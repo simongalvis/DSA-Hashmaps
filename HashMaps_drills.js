@@ -37,6 +37,36 @@ function main(){
 //The capacity of the hash table after hashing each item is 8
 //It must be because the initial capacity is set to 8
 
+//2. WhatDoesThisDo:
+//I think it will log 10 and then 20
+//After running th code, I saw that it's 20 and then 10
+//I think this is because the key corresponds to the latest value it was set to.
 
+/* const WhatDoesThisDo = function(){
+    let str1 = 'Hello World.';
+    let str2 = 'Hello World.';
+    let map1 = new HashMap();
+    map1.set(str1,10);
+    map1.set(str2,20);
+    let map2 = new HashMap();
+    let str3 = str1;
+    let str4 = str2;
+    map2.set(str3,20);
+    map2.set(str4,10);
 
-main()
+    console.log(map1.get(str2));
+    console.log(map2.get(str3));
+} */
+//WhatDoesThisDo()
+//main()
+
+const removeDuplicates = (string) =>{
+    let  nonDuplicateString = ''
+    for(let i=0; i<string.length; i++){
+        if (!nonDuplicateString.includes(string[i])){
+            nonDuplicateString += string[i]
+        }
+    }
+    return nonDuplicateString;
+}
+console.log(removeDuplicates('google'))
